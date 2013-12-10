@@ -34,7 +34,7 @@ The Android client will render the ID and content into a view.
 
 == Set up the project
 
-Within Android Studio, create a new project. Use "Rest" for the application and module names, and modify the package name to be "org.hello.rest". Enter the location of your choosing for the project and leave all the other options with their default settings.
+Within Android Studio, create a new project. If you prefer, you can use the project in the `initial` folder and skip ahead to <<initial>>. Use "Rest" for the application and module names, and modify the package name to be "org.hello.rest". Enter the location of your choosing for the project and leave all the other options with their default settings.
 
 image::images/create-project1.png[Create new Project]
 
@@ -62,16 +62,12 @@ When the project is created, you will see that several files are added. To compl
 image::images/project-contents.png[View the Android project contents]
 
 
+[[initial]]
 == Create an Android Manifest
 
-The {Android_Manifest}[Android Manifest] contains all the information required to run an Android application, and it cannot build without one. The manifest also contains any permissions for which the app is requesting of the Android operating system. In this case, the app needs to access the internet to make an HTTP request. Add the following permission so the application can access resources over the internet.
+When you created the project, an `AndroidManifest.xml` was also created with a basic implementation. The {Android_Manifest}[Android Manifest] contains all the information required to run an Android application, and it cannot build without one. The manifest also contains any permissions for which the app is requesting of the Android operating system. In this case, the app needs to access the internet to make an HTTP request. 
 
-[source,XML]
-----
-<uses-permission android:name="android.permission.INTERNET" />
-----
-
-After you add the permission, the updated manifest should look similar to this:
+Add the `INTERNET` permission so the application can access resources over the internet.
 
 `Rest/src/main/AndroidManifest.xml`
 [source,xml]
@@ -82,7 +78,7 @@ include::complete/Rest/src/main/AndroidManifest.xml[]
 
 == Create string resources
 
-Add a text string for each UI widget. Text strings can be referenced from the application or from other resource files. This guide uses four text views and a menu item, and each of these UI elements needs a text description. Add `id_label`, `id_value`, `content_label`, `content_value` and `action_refresh` strings.
+Text strings can be referenced from the application or from other resource files. This guide uses four text views and a menu item, and each of these UI elements needs a text description. Add `id_label`, `id_value`, `content_label`, `content_value` and `action_refresh` strings for each UI widget respectively.
 
 `Rest/src/main/res/values/strings.xml`
 [source,xml]
