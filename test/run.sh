@@ -7,33 +7,19 @@ if [ ! -d "$ANDROID_HOME" ]; then
 fi
 
 cd ../complete
-mvn clean package
+./gradlew clean assembleDefaultFlavorDebug
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
 fi
-rm -rf target
-
-./gradlew clean build
-ret=$?
-if [ $ret -ne 0 ]; then
-  exit $ret
-fi
-rm -rf build
+rm -rf Rest/build
 
 cd ../initial
-mvn clean package
+./gradlew clean assembleDefaultFlavorDebug
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
 fi
-rm -rf target
-
-./gradlew clean build
-ret=$?
-if [ $ret -ne 0 ]; then
-  exit $ret
-fi
-rm -rf build
+rm -rf Rest/build
 
 exit $ret
