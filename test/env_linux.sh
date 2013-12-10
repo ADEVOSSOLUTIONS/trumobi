@@ -1,3 +1,4 @@
+#!/bin/sh
 export ANDROID_HOME=${WORKSPACE}/android-sdk-linux 
 export PATH=${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:${PATH}
 wget http://dl.google.com/android/android-sdk_r22.3-linux.tgz -nv
