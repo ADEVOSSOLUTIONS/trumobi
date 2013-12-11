@@ -1,11 +1,12 @@
 :spring_boot_version: 0.5.0.M6
+:spring-android: http://spring.io/projects/spring-android
 :Android_Manifest: http://developer.android.com/guide/topics/manifest/manifest-intro.html
 :Android_Studio: http://developer.android.com/sdk/installing/studio.html
 :toc:
 :icons: font
 :source-highlighter: prettify
 :project_id: gs-consuming-rest-android
-This Getting Started guide walks you through the process of building an application that uses Spring for Android's `RestTemplate` to consume a Spring MVC-based link:/understanding/REST[RESTful web service].
+This Getting Started guide walks you through the process of building an application that uses {spring-android}[Spring for Android]'s `RestTemplate` to consume a Spring MVC-based link:/understanding/REST[RESTful web service].
 
 == What you will build
 
@@ -50,7 +51,11 @@ The last screen presents some fields for setting the activity, layout, and fragm
 
 image::images/create-project4.png[Create new Project]
 
-When the project is created, you will see that several files are added. To complete this guide, you will edit the following:
+When the project is created, you will see that several files are added.
+
+image::images/project-contents.png[View the Android project contents]
+
+To complete this guide, you will edit the following:
 
  - `Rest/src/main/AndroidManifest.xml`
  - `Rest/src/main/res/values/strings.xml`
@@ -59,10 +64,7 @@ When the project is created, you will see that several files are added. To compl
  - `Rest/build.gradle`
  - `Rest/src/main/java/org/hello/rest/MainActivity.java`
 
-image::images/project-contents.png[View the Android project contents]
 
-
-[[initial]]
 == Create an Android Manifest
 
 When you created the project, an `AndroidManifest.xml` was also created with a basic implementation. The {Android_Manifest}[Android Manifest] contains all the information required to run an Android application, and it cannot build without one. The manifest also contains any permissions for which the app is requesting of the Android operating system. In this case, the app needs to access the internet to make an HTTP request. 
@@ -117,6 +119,7 @@ Android Studio will display the visual representation of the menu in the preview
 image::images/menu-layout.png[Fragment layout preview]
 
 
+[[initial]]
 == Create a representation class
 
 To model the JSON data received from the RESTful HTTP request, you create a representation class that defines the fields.
@@ -127,7 +130,7 @@ To model the JSON data received from the RESTful HTTP request, you create a repr
 include::complete/Rest/src/main/java/org/hello/rest/Greeting.java[]
 ----
 
-As you can see, this is a simple Java class with a handful of properties and matching getter methods.
+As you can see, this is a simple Java class with two properties and matching getter methods.
 
 
 == Add dependencies
