@@ -166,13 +166,17 @@ Lastly, update the `onOptionsItemSelected` method to also execute the HTTP reque
 [[run]]
 == Run the client
 
-You can now run the app from Android Studio. To do this, click the play button (green triangle) in the toolbar of Android Studio. It will open in the Android eumulator, where you see:
+You can now run the app from Android Studio. To do this, click the play button (green triangle) in the toolbar of Android Studio. A dialog box will appear asking you to select the device on which to run the app. You must have an Android device or emulator configured in order to run the app. 
 
-image::images/hello.png[Model data retrieved from the REST service is rendered into the view.]
+image::images/choose-device.png[Choose Android device]
+
+After you select an Android device, the Android Studio will build and deploy the app:
+
+image::images/hello.png[Model data retrieved from the REST service is rendered into the view]
 
 The ID value will increment each time you click the refresh button.
 
-image::images/hello-refresh.png[Model data retrieved from the REST service is rendered into the view.]
+image::images/hello-refresh.png[Model data retrieved from the REST service is rendered into the view]
 
 
 == Summary
