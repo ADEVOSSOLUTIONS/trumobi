@@ -33,9 +33,9 @@ The Android client will render the ID and content into a view.
  - An internet connection
 
 
-== Set up the project
+== Create an Android project
 
-Within Android Studio, create a new project. If you prefer, you can use the project in the `initial` folder and skip ahead to <<initial>>. Use "Rest" for the application and module names, and modify the package name to be "org.hello.rest". Enter the location of your choosing for the project and leave all the other options with their default settings.
+Within Android Studio, create a new project. If you prefer, you can use the project in the `initial` folder and skip ahead to <<initial>>. When you are finished, you can compare your code to the `complete` folder and <<run>>. Use "Rest" for the application and module names, and modify the package name to be "org.hello.rest". Enter the location of your choosing for the project and leave all the other options with their default settings.
 
 image::images/create-project1.png[Create new Project]
 
@@ -161,6 +161,18 @@ Spring provides a template class called `RestTemplate`. `RestTemplate` makes int
 Next, add the `onStart` method which calls the `execute` method on `HttpRequestTask`. The `onStart` method is part of the `Activity` lifecycle and is called when the activity starts. The result is that the HTTP request is performed when the app loads.
 
 Lastly, update the `onOptionsItemSelected` method to also execute the HTTP request when the "Refresh" menu item is selected. This allows you to make additional HTTP requests without closing and restarting the app.
+
+
+[[run]]
+== Run the client
+
+You can now run the app from Android Studio. To do this, click the play button (green triangle) in the toolbar of Android Studio. It will open in the Android eumulator, where you see:
+
+image::images/hello.png[Model data retrieved from the REST service is rendered into the view.]
+
+The ID value will increment each time you click the refresh button.
+
+image::images/hello-refresh.png[Model data retrieved from the REST service is rendered into the view.]
 
 
 == Summary
