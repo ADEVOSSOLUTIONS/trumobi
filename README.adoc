@@ -80,7 +80,7 @@ include::complete/Rest/src/main/AndroidManifest.xml[]
 
 == Create string resources
 
-Text strings can be referenced from the application or from other resource files. This guide uses four text views and a menu item, and each of these UI elements needs a text description. Add `id_label`, `id_value`, `content_label`, `content_value` and `action_refresh` strings for each UI widget respectively.
+Text strings can be referenced from the application or from other resource files. This guide uses four text views and a menu item, and each of these UI elements needs a text description. First, remove the `hello_world` and `action_settings` strings. When you created the project, it included these. These are not used for this guide and can be removed. Next, add `id_label`, `id_value`, `content_label`, `content_value` and `action_refresh` strings for each UI widget respectively. 
 
 `Rest/src/main/res/values/strings.xml`
 [source,xml]
@@ -91,7 +91,7 @@ include::complete/Rest/src/main/res/values/strings.xml[]
 
 == Create a layout
 
-The layout file is where you define the visual structure for the user interface of your application. When you created the project, Android Studio added a layout fragment. As the name implies, a layout fragment represents a piece of the overall layout. In this case the layout fragment is used to display some text within the main activity. Modify the layout fragment to include four `TextView` widgets. The ids are used to reference these widgets from the code. Note the use of the string resources for the text of each widget.
+The layout file is where you define the visual structure for the user interface of your application. When you created the project, Android Studio added a layout fragment. As the name implies, a layout fragment represents a piece of the overall layout. In this case the layout fragment is used to display some text within the main activity. Remove the existing "Hello world!" `TextView` that was added when you created the project. Then modify the layout fragment to include four `TextView` widgets. The ids are used to reference these widgets from the code. Note the use of the string resources for the text of each widget.
 
 `Rest/src/main/res/layout/fragment_main.xml`
 [source,xml]
@@ -106,7 +106,7 @@ image::images/fragment-layout.png[Fragment layout preview]
 
 == Create a menu
 
-The project includes a menu for the main activity. Modify the menu to have a "refresh" option. Note again the use of the string resource as the title of the menu item.
+The project includes a menu for the main activity with an existing "Settings" option. Remove the "Settings" menu option and add the "refresh" option. Note again the use of the string resource as the title of the menu item.
 
 `Rest/src/main/res/menu/main.xml`
 [source,xml]
@@ -122,15 +122,21 @@ image::images/menu-layout.png[Fragment layout preview]
 [[initial]]
 == Create a representation class
 
-To model the JSON data received from the RESTful HTTP request, you create a representation class that defines the fields.
+To model the JSON data received from the RESTful HTTP request, you create a representation class that defines the fields. Navigate to the "org.hello.rest" package in the Project navigator. Select "New..." from the "File" menu.
+
+image::images/new-file.png[Add new file]
+
+Select "Java Class"
+
+image::images/new-class.png[Add new class]
+
+Add the `id` and `content` member variables and getters.
 
 `Rest/src/main/java/org/hello/rest/Greeting.java`
 [source,java]
 ----
 include::complete/Rest/src/main/java/org/hello/rest/Greeting.java[]
 ----
-
-As you can see, this is a simple Java class with two properties and matching getter methods.
 
 
 == Add dependencies
@@ -162,11 +168,15 @@ Next, add the `onStart` method which calls the `execute` method on `HttpRequestT
 
 Lastly, update the `onOptionsItemSelected` method to also execute the HTTP request when the "Refresh" menu item is selected. This allows you to make additional HTTP requests without closing and restarting the app.
 
+Android Studio does not automatically update the imports, however you can change this behavior in the settings. Once enabled it will behave similarly to "Ctrl+Shift+O" in STS or Eclipse. Otherwise, you need to manually update the imports to include the new referenced classes.
+
+image::images/auto-imports.png[Enable automatic imports]
+
 
 [[run]]
 == Run the client
 
-You can now run the app from Android Studio. To do this, click the play button (green triangle) in the toolbar of Android Studio. A dialog box will appear asking you to select the device on which to run the app. You must have an Android device or emulator configured in order to run the app. 
+You can now run the app from Android Studio. To do this, click the play button (green triangle) in the toolbar of Android Studio. A dialog box will appear asking you to select the device on which to run the app. You must have an Android device or emulator configured in order to run the app. If you have not configured an Android Virtual Device (AVD), then you can select the elipsis to create a new one.
 
 image::images/choose-device.png[Choose Android device]
 
@@ -174,7 +184,7 @@ After you select an Android device, the Android Studio will build and deploy the
 
 image::images/hello.png[Model data retrieved from the REST service is rendered into the view]
 
-The ID value will increment each time you click the refresh button.
+The ID value will increment each time you click the refresh menu button.
 
 image::images/hello-refresh.png[Model data retrieved from the REST service is rendered into the view]
 
