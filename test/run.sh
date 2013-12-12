@@ -7,7 +7,7 @@ if [ ! -d "$ANDROID_HOME" ]; then
 fi
 
 cd ../complete
-./gradlew clean assembleDefaultFlavorDebug
+./gradlew clean build
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret
@@ -15,7 +15,7 @@ fi
 rm -rf Rest/build
 
 cd ../initial
-./gradlew clean assembleDefaultFlavorDebug
+./gradlew clean build
 ret=$?
 if [ $ret -ne 0 ]; then
   exit $ret

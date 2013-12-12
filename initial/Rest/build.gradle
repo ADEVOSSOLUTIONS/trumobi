@@ -22,8 +22,8 @@ android {
     }
     buildTypes {
         release {
-            runProguard true
-            proguardFile getDefaultProguardFile('proguard-android-optimize.txt')
+            runProguard false
+            proguardFile getDefaultProguardFile('proguard-android.txt')
         }
     }
     productFlavors {
