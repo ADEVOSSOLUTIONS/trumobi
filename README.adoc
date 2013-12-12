@@ -126,9 +126,11 @@ To model the JSON data received from the RESTful HTTP request, you create a repr
 
 image::images/new-file.png[Add new file]
 
+
 Select "Java Class"
 
 image::images/new-class.png[Add new class]
+
 
 Add the `id` and `content` member variables and getters.
 
@@ -168,7 +170,7 @@ Next, add the `onStart` method which calls the `execute` method on `HttpRequestT
 
 Lastly, update the `onOptionsItemSelected` method to also execute the HTTP request when the "Refresh" menu item is selected. This allows you to make additional HTTP requests without closing and restarting the app.
 
-Android Studio does not automatically update the imports, however you can change this behavior in the settings. Once enabled it will behave similarly to "Ctrl+Shift+O" in STS or Eclipse. Otherwise, you need to manually update the imports to include the new referenced classes.
+Android Studio does not automatically update the imports, however you can change this behavior in the settings. Once enabled it will behave similarly to "Ctrl+Shift+O" in STS or Eclipse. Otherwise, you need to manually update the imports to include the newly referenced classes.
 
 image::images/auto-imports.png[Enable automatic imports]
 
@@ -180,7 +182,7 @@ You can now run the app from Android Studio. To do this, click the play button (
 
 image::images/choose-device.png[Choose Android device]
 
-After you select an Android device, the Android Studio will build and deploy the app:
+After you select an Android device, Android Studio will build and deploy the app:
 
 image::images/hello.png[Model data retrieved from the REST service is rendered into the view]
 
