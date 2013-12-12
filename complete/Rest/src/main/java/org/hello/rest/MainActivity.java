@@ -94,7 +94,7 @@ public class MainActivity extends ActionBarActivity {
             TextView greetingIdText = (TextView) findViewById(R.id.id_value);
             TextView greetingContentText = (TextView) findViewById(R.id.content_value);
             greetingIdText.setText(greeting.getId());
-            greetingContentText.setText(greeting.getcontent());
+            greetingContentText.setText(greeting.getContent());
         }
 
     }

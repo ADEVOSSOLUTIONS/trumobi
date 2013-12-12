@@ -9,7 +9,7 @@ public class Greeting {
         return this.id;
     }
 
-    public String getcontent() {
+    public String getContent() {
         return this.content;
     }
 
