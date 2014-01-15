@@ -1,3 +1,7 @@
+---
+tags: [rest, android]
+projects: [spring-android]
+---
 :spring_boot_version: 0.5.0.M6
 :spring-android: http://spring.io/projects/spring-android
 :Android_Manifest: http://developer.android.com/guide/topics/manifest/manifest-intro.html
