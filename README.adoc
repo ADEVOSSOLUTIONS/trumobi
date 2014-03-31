@@ -2,7 +2,6 @@
 tags: [rest, android]
 projects: [spring-android]
 ---
-:spring_boot_version: 0.5.0.M6
 :spring-android: http://spring.io/projects/spring-android
 :Android_Manifest: http://developer.android.com/guide/topics/manifest/manifest-intro.html
 :Android_Studio: http://developer.android.com/sdk/installing/studio.html
@@ -148,6 +147,8 @@ include::complete/Rest/src/main/java/org/hello/rest/Greeting.java[]
 == Add dependencies
 
 To utilize Spring for Android's RestTemplate within an Android app, you need to add the required Maven dependencies to the Gradle build file. RestTemplate makes use of Jackson, which is a powerful JSON processor for Java.
+
+NOTE: You may need to close and reopen Android Studio for Gradle to properly refresh the dependencies  
 
 `Rest/build.gradle`
 [source,gradle]
